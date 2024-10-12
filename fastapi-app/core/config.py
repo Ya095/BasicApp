@@ -1,5 +1,4 @@
-from pydantic import BaseModel
-from pydantic import PostgresDsn
+from pydantic import BaseModel, PostgresDsn
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -40,6 +39,7 @@ class Settings(BaseSettings):
 
     # prefix
     api_prefix: str = "/api"
+    api_v1_prefix: str = "/v1"
 
 
 settings = Settings()
