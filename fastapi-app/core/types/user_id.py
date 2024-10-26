@@ -1,0 +1,1 @@
+userIdType = int
