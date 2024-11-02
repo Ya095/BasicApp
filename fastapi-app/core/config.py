@@ -29,6 +29,11 @@ class AccessToken(BaseModel):
     verification_token_secret: str
 
 
+class ApiV1Prefix(BaseModel):
+    prefix: str = "/v1"
+    auth: str = "/auth"
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -45,7 +50,7 @@ class Settings(BaseSettings):
 
     # prefix
     api_prefix: str = "/api"
-    api_v1_prefix: str = "/v1"
+    api_v1_prefix: ApiV1Prefix = ApiV1Prefix()
 
     # access token
     access_token: AccessToken = AccessToken()

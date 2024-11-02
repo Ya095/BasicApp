@@ -1,11 +1,11 @@
 from fastapi import APIRouter
 from core.config import settings
-from .some_api import router as some_router
+from .auth import router as auth_router
 
 
 # Подключение роутера(ов)
 router = APIRouter(
-    prefix=settings.api_v1_prefix
+    prefix=settings.api_v1_prefix.prefix
 )
 
-router.include_router(some_router)
+router.include_router(auth_router)
