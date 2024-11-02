@@ -5,11 +5,11 @@ from core.config import settings
 
 
 router = APIRouter(
-    prefix=settings.api_v1_prefix.auth,
+    prefix=settings.api.v1.auth,
     tags=["Auth"]
 )
 
 # /login /logout
 router.include_router(
-    router=fastapi_users.get_users_router(authentication_backend),
+    router=fastapi_users.get_auth_router(authentication_backend),
 )

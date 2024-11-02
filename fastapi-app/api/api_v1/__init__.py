@@ -5,7 +5,7 @@ from .auth import router as auth_router
 
 # Подключение роутера(ов)
 router = APIRouter(
-    prefix=settings.api_v1_prefix.prefix
+    prefix=settings.api.v1.prefix
 )
 
 router.include_router(auth_router)

@@ -34,6 +34,11 @@ class ApiV1Prefix(BaseModel):
     auth: str = "/auth"
 
 
+class ApiPrefix(BaseModel):
+    prefix: str = "/api"
+    v1: ApiV1Prefix = ApiV1Prefix()
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -42,17 +47,9 @@ class Settings(BaseSettings):
         env_prefix="APP_CONFIG__"
     )
 
-    # run_configuration
     run: RunConfig = RunConfig()
-
-    # db
+    api: ApiPrefix = ApiPrefix()
     db: DatabaseConfig
-
-    # prefix
-    api_prefix: str = "/api"
-    api_v1_prefix: ApiV1Prefix = ApiV1Prefix()
-
-    # access token
     access_token: AccessToken
 
 
