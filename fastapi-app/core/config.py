@@ -53,7 +53,7 @@ class Settings(BaseSettings):
     api_v1_prefix: ApiV1Prefix = ApiV1Prefix()
 
     # access token
-    access_token: AccessToken = AccessToken()
+    access_token: AccessToken
 
 
 settings = Settings()

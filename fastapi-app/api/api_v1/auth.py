@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-
 from api.dependencies.authentication.backend import authentication_backend
 from api.dependencies.authentication.fastapi_users import fastapi_users
 from core.config import settings
@@ -10,6 +9,7 @@ router = APIRouter(
     tags=["Auth"]
 )
 
+# /login /logout
 router.include_router(
     router=fastapi_users.get_users_router(authentication_backend),
 )
